@@ -1,0 +1,275 @@
+/* h1{font-family: "Orbitron", serif; font-optical-sizing: auto; font-weight: <weight>; font-style: normal;} */
+
+/* Normalización */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   /*Mantiene el ancho y alto a pesar de que tenga border o padding*/
+    font-family: "Orbitron", serif;
+    list-style: none;   /*Hace que las listas no tengan puntos, guiones, números, letras, etc*/
+    text-decoration: none;   /*Hace que los links no esten subrayados*/
+    color: white;
+}
+
+body{
+    background-color: black;
+}
+
+header{
+    position: fixed;  /*Esto hace que el header se quede fijo en la parte superior*/
+    right: 0;
+    top: 0;
+    z-index: 100; /*Esto hace que el header este 100 capas por "encima" de todo el resto, es decir, nada se pondra por encima de el header*/
+    width: 100%;
+    display: flex; /*Esto hará que los elementos se pongan en linea (la navlist a lado de el logo)*/
+    align-items: center; /*Centra verticalmente*/
+    justify-content: space-between;  /*Hace que los elementos se esquineen (de forma horizontal)*/
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.navlist{
+    display: flex;   /*Hace que los elementos de la unordered list se pongan en linea (uno al lado del otro)*/
+}
+
+.navlist a{
+    margin-left: 60px;    /*Es para separar los elementos de la unordered list*/
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: solid 2px transparent;
+    transition: all 3s;     /*Al poner "all" haré que todas las caracteristicas transicionen y que lo hagan en "3s"*/
+    transition-timing-function: ease;   /*Este da la caracteristica de como va a ser el movimiento de la transición)*/
+}
+
+.navlist a:hover{
+    border-bottom: solid 2px white;
+}
+
+#menu-icon{
+    display: none;     /*Para que no se vea el ícono si no hasta que la página este colapsada de forma horzontal*/
+}
+#menu-icon{
+    z-index: 101;     /*Pongo el valor 101 para que se sobreponga al valor que puse en el header*/
+    font-size: 35px;
+    cursor: pointer;   /*Cuando este encima del boton, el cursor cambiara su forma a la seleccionada*/
+}
+
+#menu-toggle{
+    display: none;   /*Se usa para nunca ver el checkbox*/
+}
+
+.menu-icon-action{
+    display: none;   /*Se usa para que nada sea clickleable*/
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg,  /*Esta parte indica en que dirección irá el degradado*/
+                    #31494e 0%, #385e70 25%, #131313 75%);   /*Esta parte indica que colores tendrá y en que porcentaje cambiará*/
+    position: relative;  /*Se usa para que su "padre" ya no sea el body si no este contenedor (la sección "hero")*/
+    display: grid;   /*Lo usé para que el "hero" se pudierá dividir en dos columnas*/
+    grid-template-columns: 1fr 1fr;  /*Estas son las dos columnas. Aqui támbien se les da tamaño (fr= free-space)*/
+    align-items: center;   /*Lo usé para alinear verticalmente la sección "hero"*/
+    gap: 2rem;   /*Lo usé para que haya un espacio de dos rem entre las dos columnas*/
+}
+
+section{
+    padding: 0 8%;
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.hero-text h1{
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text p{
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-img img{
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    border-radius: 60px;
+    transition: all 2s;
+    transition-timing-function: linear;
+}
+.hero-img img:hover{
+    width: 420px;
+    opacity: 0.6;
+}
+
+.hero-text a{
+    display: inline-block; /*Permite que los elementos sigan estando uno al lado del otro pero tambien se les puede dar ancho y alto*/
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;         /*Esto hace que el texto se ponga todo en mayúscula*/
+    transition: all .5s;
+    transition-timing-function: ease;
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);       /*Esto hace que la translasión solo sea en el eje X*/
+}
+
+.hero-text a.videos{
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.videos i{
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.redes-sociales{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);     /*Esto hace que la translasión solo sea en el eje Y*/
+}
+
+.redes-sociales i{
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all .5s;
+    transition-timing-function: ease;
+}
+
+.redes-sociales i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);      /*Esto hace que la translasión solo sea en el eje Y*/
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all .5s;
+    transition-timing-function: ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(-5px);
+}
+
+@media (max-width:992px){
+    
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-text{
+        padding-top: 0;
+    }
+    
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-text p{
+        font-size: 65%;
+    }
+
+    .redes-sociales{
+        display: none;
+    }
+
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img{
+        margin: 0;
+    }
+
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #021419ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5s ease-out;
+    }
+
+    .navlist a{
+        display: block;
+        margin: 5px 0;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul {
+        right: 0;
+    }
+}
